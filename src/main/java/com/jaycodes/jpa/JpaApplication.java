@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.jaycodes.jpa.repositories.AuthorRepository;
+import com.jaycodes.jpa.repositories.VideoRepository;
 
 @SpringBootApplication
 public class JpaApplication {
@@ -15,9 +16,10 @@ public class JpaApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(AuthorRepository repo) {
+	public CommandLineRunner commandLineRunner(AuthorRepository repo, VideoRepository vrepo) {
 		return args -> {
-
+//			var video = Video.builder().name("abc").length(3).build();
+//			vrepo.save(video);
 		};
 	}
 

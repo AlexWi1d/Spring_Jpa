@@ -1,5 +1,8 @@
 package com.jaycodes.jpa.models;
 
+import org.hibernate.annotations.Polymorphism;
+import org.hibernate.annotations.PolymorphismType;
+
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +16,8 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
+@Polymorphism(type = PolymorphismType.EXPLICIT)
+//@DiscriminatorValue("V")
 public class Video extends Resource {
 
 	private int length;
